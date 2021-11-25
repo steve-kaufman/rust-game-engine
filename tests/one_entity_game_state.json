@@ -1,0 +1,42 @@
+{
+  "entities": [
+    {
+      "name": "Player Man",
+      "id": "random-id-of-player-man",
+      "transform": {
+        "x": 0,
+        "y": -1,
+        "w": 1,
+        "h": 1.8
+      },
+      "behaviors": [
+        {
+          "type": "kinematicBody",
+          "data": {
+            "foo": "bar",
+            "baz": 3
+          }
+        },
+        {
+          "type": "rectangleCollider",
+          "data": {
+            "x": 0,
+            "y": -0.1,
+            "w": 0.8,
+            "h": 0.9
+          }
+        },
+        {
+          "type": "script",
+          "data": {
+            "name": "playerMove.script",
+            "requires": {
+              "transform": "this.transform",
+              "camera": "random-id-of-camera.camera"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
