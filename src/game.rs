@@ -1,32 +1,22 @@
-use crate::Transform;
+use crate::parser;
 
-use crate::game_state_parser::parse_game_state;
+use crate::parser::parse_game_state;
 
 #[derive(Debug, PartialEq)]
 pub enum Error {
   ParseError,
 }
 
-#[derive(Debug)]
-pub struct Game {
-  transforms: Vec<Transform>,
-}
+#[derive(Default, Debug)]
+pub struct Game {}
 
 impl Game {
   pub fn new() -> Game {
-    Game {
-      transforms: Vec::new(),
-    }
+    Game {}
   }
 
-  pub fn from_state(state: String) -> Result<Game, Error> {
-    let game_state = parse_game_state(state)?;
-    Ok(Game {
-      transforms: game_state.transforms,
-    })
-  }
-
-  pub fn transforms(&self) -> Vec<Transform> {
-    self.transforms.clone()
+  pub fn from_state(state: &str) -> Result<Game, parser::Error> {
+    parse_game_state(state)?;
+    Ok(Game {})
   }
 }

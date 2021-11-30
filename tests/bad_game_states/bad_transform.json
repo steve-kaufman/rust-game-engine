@@ -3,10 +3,11 @@
     {
       "name": "Player Man",
       "id": "random-id-of-player-man",
+      "parent": "root",
       "transform": {
-        "x": 0,
+        "x": "foo",
         "y": -1,
-        "w": 1,
+        "w": ["a", "b", "c"],
         "h": 1.8
       },
       "behaviors": [

@@ -1,5 +1,6 @@
+pub mod parser;
+
 mod game;
-mod game_state_parser;
 mod transform;
 
 pub use game::*;
